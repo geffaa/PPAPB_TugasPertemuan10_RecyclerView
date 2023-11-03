@@ -1,0 +1,76 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/abg">
+
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="Fruit Description"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/imageViewDetail"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/name_txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:src="@drawable/apple"/>
+
+        <TextView
+            android:id="@+id/textViewNameDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_below="@id/imageViewDetail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewNameDetail"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_deskripsi">
+
+            <TextView
+                android:id="@+id/textViewDescriptioin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_deskripsi"
+                android:justificationMode="inter_word"
+                android:text="Apel adalah buah yang berasal dari pohon buah apel (Malus domestica) dan termasuk ke dalam keluarga Rosaceae. Buah apel memiliki bentuk bulat dengan kulit yang halus dan berbagai warna, mulai dari merah, hijau, hingga kuning. Daging buah apel umumnya renyah dan manis, meskipun beberapa varietas juga memiliki rasa sedikit asam.
+
+Buah apel dikenal sebagai salah satu buah yang paling populer di seluruh dunia. Buah ini memiliki banyak varietas, masing-masing dengan karakteristik uniknya sendiri. Apel sering dimakan segar, tetapi juga digunakan dalam berbagai hidangan, minuman, dan produk makanan lainnya seperti jus, saus, dan pai.
+
+Buah apel mengandung serat makanan, vitamin C, kalium, dan antioksidan. Serat makanan dalam apel dapat membantu meningkatkan pencernaan dan menjaga kesehatan usus. Vitamin C adalah antioksidan penting yang mendukung sistem kekebalan tubuh. Kalium adalah mineral yang penting untuk menjaga tekanan darah yang sehat.
+
+Selain kandungan nutrisi, buah apel juga memiliki sejarah dan mitologi yang kaya. Apel sering kali dianggap sebagai simbol pengetahuan, kebijaksanaan, dan keabadian dalam berbagai budaya dan cerita rakyat. Buah apel juga menjadi bagian dari berbagai perayaan dan festival di berbagai negara di seluruh dunia.
+
+Namun, sangat penting untuk mencuci apel dengan baik sebelum dimakan atau dimasak untuk menghilangkan kotoran dan pestisida yang mungkin melekat pada kulitnya. Apel yang sehat dan segar adalah pilihan camilan yang lezat dan bergizi untuk menambah variasi diet sehari-hari."
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
