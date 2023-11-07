@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow di luar (outset) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#000000" /> <!-- Warna bayangan (shadow) -->
+            <corners android:radius="8dp" /> <!-- Radius sudut bayangan (dapat disesuaikan) -->
+        </shape>
+    </item>
+    <!-- Background putih -->
+    <item android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#D2E3C8" /> <!-- Warna latar belakang item -->
+            <corners android:radius="8dp" /> <!-- Radius sudut border (dapat disesuaikan) -->
+        </shape>
+    </item>
+</layer-list>

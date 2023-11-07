@@ -14,12 +14,17 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Mendapatkan data buah dari Intent
-        val fruitName = intent.getStringExtra("FRUIT_NAME")
-        val fruitWeight = intent.getStringExtra("FRUIT_WEIGHT")
-        val fruitImageRes = intent.getIntExtra("FRUIT_IMAGE", R.drawable.apple)
+        val fruitName = intent.getStringExtra("FRUIT_NAME").toString()
+        val fruitDescription = intent.getStringExtra("FRUIT_DESCRIPTION").toString()
+        val fruitImageRes = intent.getIntExtra("FRUIT_IMAGE", 0)
 
-        // Menetapkan data buah ke antarmuka pengguna
-        binding.imageViewDetail.setImageResource(fruitImageRes)
-        binding.textViewNameDetail.text = fruitName
+        with(binding){
+            textViewNameDetail.text = fruitName
+            textViewDescription.text = fruitDescription
+            imageViewDetail.setImageResource(fruitImageRes)
+
+
+
+        }
     }
 }

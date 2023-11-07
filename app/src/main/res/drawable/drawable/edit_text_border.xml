@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" /> <!-- Warna latar belakang EditTExt -->
+    <stroke android:color="#000000" android:width="0.5dp" /> <!-- Warna border dan lebar border -->
+    <corners android:radius="8dp" /> <!-- Radius sudut border (dapat disesuaikan) -->
+</shape>

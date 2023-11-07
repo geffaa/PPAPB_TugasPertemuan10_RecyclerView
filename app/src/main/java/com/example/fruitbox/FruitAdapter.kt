@@ -8,28 +8,24 @@ import com.example.fruitbox.databinding.ItemFruitBinding
 typealias OnClickFruit = (Fruit) -> Unit
 
 class FruitAdapter(private val listFruit : List<Fruit>,
-    private val onClickFruit: OnClickFruit):
+                   private val onClickFruit: OnClickFruit):
     RecyclerView.Adapter<FruitAdapter.ItemFruitViewHolder>() {
 
-        inner class ItemFruitViewHolder(private val binding: ItemFruitBinding):
-            RecyclerView.ViewHolder(binding.root) {
-                fun bind(data: Fruit) {
-                    with(binding){
-                        nameTxt.text = data.name
-                        weightTxt.text = data.weight
-                        imgIcon.setImageResource(data.gambar)
+    inner class ItemFruitViewHolder(val binding: ItemFruitBinding):
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: Fruit) {
+            with(binding){
+                nameTxt.text = data.name
+                priceTxt.text = data.price
+                imgIcon.setImageResource(data.image)
 
-                        itemView.setOnClickListener(){
-                            onClickFruit(data)
-                        }
-                    }
+                itemView.setOnClickListener(){
+                    onClickFruit(data)
                 }
+            }
         }
-
-    fun updateData(newFruitList: List<Fruit>) {
-        var fruitList = newFruitList
-        notifyDataSetChanged() // Memperbarui tampilan RecyclerView setelah data berubah
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemFruitViewHolder {
         val binding = ItemFruitBinding.inflate(
@@ -40,7 +36,13 @@ class FruitAdapter(private val listFruit : List<Fruit>,
     }
 
     override fun onBindViewHolder(holder: ItemFruitViewHolder, position: Int) {
-        holder.bind(listFruit[position])
+        val fruit = listFruit[position]
+        holder.bind(fruit)
+        holder.binding.imgIcon.setImageResource(fruit.image)
+
+        holder.itemView.setOnClickListener(){
+            onClickFruit(fruit)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -48,4 +50,4 @@ class FruitAdapter(private val listFruit : List<Fruit>,
     }
 
 
-    }
+}

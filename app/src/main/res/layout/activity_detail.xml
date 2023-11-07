@@ -47,7 +47,7 @@
             android:background="@drawable/bg_deskripsi">
 
             <TextView
-                android:id="@+id/textViewDescriptioin"
+                android:id="@+id/textViewDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
