@@ -3,6 +3,7 @@ package com.example.fruitbox
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import com.example.fruitbox.databinding.ActivityMainBinding
@@ -14,8 +15,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.searchView.requestFocus()
         setContentView(binding.root)
+
+        val nameFruit = arrayOf(
+            "Apel", "Pisang", "Jeruk", "Mangga", "Anggur", "Semangka", "Nanas", "Strawberry", "Ceri", "Persik", "Pir", "Raspberry", "Blackberry", "Blueberry", "Lemon", "Alpukat", "Kiwi"
+        )
+
+        val fruitAdapter : ArrayAdapter<String> = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_list_item_1,
+            nameFruit
+        )
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.searchView.clearFocus()
+                if (nameFruit.contains(query)) {
+                    fruitAdapter.filter.filter(query)
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                fruitAdapter.filter.filter(newText)
+                return false
+            }
+        })
+
 
         val adapterFruit = FruitAdapter(generateFruitData()) { fruit ->
             val intent = Intent(this@MainActivity, DetailActivity::class.java)
